@@ -1,0 +1,15 @@
+{#- 학교 목록#}
+{#	- 모든 학교 목록을 출력#}
+{#	- 학교 상세보기로의 링크 구현#}
+
+{% extends 'base.html' %}
+
+
+{% block content %}
+    {% for school in school %}
+        <h2> 학교 목록</h2>
+
+        <a href="{% url 'school-detail' pk=school.pk %}">{{ school.name }}</a>
+
+    {% endfor %}
+{% endblock %}

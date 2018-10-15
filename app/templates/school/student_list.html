@@ -1,0 +1,16 @@
+{#- 학생 목록#}
+{#	- 모든 학생 목록을 출력#}
+{#	- 각 학생이 다니는 학교도 함께 출력해준다#}
+{#	- 학생 상세보기로의 링크 구현#}
+
+{% extends 'base.html' %}
+
+
+{% block content %}
+    {% for school in school %}
+        <h2> 학생 목록</h2>
+
+        <a href="{% url 'students-detail' pk=students.pk %}">{{ students.name }}</a>
+
+    {% endfor %}
+{% endblock %}
